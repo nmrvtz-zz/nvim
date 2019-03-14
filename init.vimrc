@@ -7,7 +7,7 @@ Plugin 'tpope/vim-sensible'
 " Completetions
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'neoclide/coc.nvim'
-Plug 'alvan/vim-closetag'
+Plugin 'alvan/vim-closetag'
 " Themes
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'drewtempelmeyer/palenight.vim'

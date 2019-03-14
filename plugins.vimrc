@@ -13,12 +13,13 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 0
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_eslint_use_local_config = 1
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 
-let g:signify_sign_add               = ''
-let g:signify_sign_delete            = ''
-let g:signify_sign_change            = ''
+let g:signify_sign_add = '┃'
+let g:signify_sign_change = '┃'
+let g:signify_sign_delete = '◢'
+let g:signify_sign_show_count = 0
 
 let g:projectionist_heuristics = {
       \   'src/*': {

@@ -39,6 +39,7 @@ set linebreak
 set wildmenu
 set lazyredraw
 set showmatch
+set numberwidth=1
 set noshowmode " lightline shows the status not vim
 "set showcmd
 "}}}
