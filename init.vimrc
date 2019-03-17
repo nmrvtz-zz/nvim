@@ -13,6 +13,8 @@ Plugin 'ayu-theme/ayu-vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'rakr/vim-one'
 Plugin 'tyrannicaltoucan/vim-quantum'
+Plugin 'Nequo/vim-allomancer'
+Plugin 'srcery-colors/srcery-vim'
 " Airline and style stuff
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
