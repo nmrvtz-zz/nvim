@@ -18,7 +18,6 @@ Plugin 'srcery-colors/srcery-vim'
 " Airline and style stuff
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
-Plugin 'ryanoasis/vim-devicons'
 " Git Stuff
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
@@ -33,5 +32,5 @@ Plugin 'tpope/vim-commentary'
 Plugin 'neoclide/vim-jsx-improve'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'heavenshell/vim-jsdoc'
-
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()

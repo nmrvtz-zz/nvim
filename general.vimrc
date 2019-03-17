@@ -2,7 +2,7 @@ set nocompatible
 
 " Colors and styling {{{
 colorscheme palenight
-let ayucolor="dark"
+let ayucolor="mirage"
 let base16colorspace=256
 syntax enable
 set background=dark 
