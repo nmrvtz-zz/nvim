@@ -21,32 +21,8 @@ let g:signify_sign_change = '┃'
 let g:signify_sign_delete = '◢'
 let g:signify_sign_show_count = 0
 
-let g:projectionist_heuristics = {
-      \   'src/*': {
-      \     '*.js': {
-      \       'alternate': [
-      \         '{dirname}/{basename}.test.js',
-      \         '{dirname}/__tests__/{basename}.test.js',
-      \       ],
-      \       'type': 'source'
-      \     },
-      \     '*.test.js': {
-      \       'alternate': [
-      \         '{dirname}/{basename}.js',
-      \         '{dirname}/../{basename}.js'
-      \       ],
-      \       'type': 'test',
-      \     },
-      \     '**/__tests__/*-mocha.js': {
-      \       'alternate': '{dirname}/{basename}.js',
-      \       'type': 'test'
-      \     },
-      \     '**/__tests__/*-test.js': {
-      \       'alternate': '{dirname}/{basename}.js',
-      \       'type': 'test'
-      \     }
-      \   }
-      \ }
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 au FileType elixir let b:AutoPairs = AutoPairsDefine({'do': 'end//n'})
 
@@ -102,6 +78,8 @@ let g:ctrlp_custom_ignore = {
 \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
 \ 'file': '\.so$\|\.dat$|\.DS_Store$'
 \ }
+
+nnoremap <C-b> :CtrlPBuffer<CR>
 
 let g:sneak#label = 1
 
@@ -167,7 +145,7 @@ endfunction
 
 function! LightlineFilename()
   return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-       \ ('' != expand('%:t') ? WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '[No Name]') .
+       \ ('' != expand('%:t') ? WebDevIconsGetFileTypeSymbol() . ' ' .expand('%') : '[No Name]') .
        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
 endfunction
 
@@ -177,3 +155,19 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " enable folder glyph flag
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+let g:UltiSnipsExpandTrigger="<S-Tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"

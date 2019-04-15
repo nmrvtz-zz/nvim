@@ -28,9 +28,12 @@ Plugin 'w0rp/ale'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'rking/ag.vim'
 " JavaScript
 Plugin 'neoclide/vim-jsx-improve'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'SirVer/ultisnips'
+Plugin 'mlaursen/vim-react-snippets'
 call vundle#end()

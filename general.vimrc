@@ -41,6 +41,7 @@ set lazyredraw
 set showmatch
 set numberwidth=1
 set noshowmode " lightline shows the status not vim
+set mouse=a
 "set showcmd
 "}}}
 
