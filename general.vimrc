@@ -1,7 +1,7 @@
 set nocompatible
 
 " Colors and styling {{{
-colorscheme palenight
+colorscheme onedark
 let ayucolor="mirage"
 let base16colorspace=256
 syntax enable

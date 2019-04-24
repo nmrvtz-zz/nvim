@@ -21,7 +21,7 @@ let g:signify_sign_change = '┃'
 let g:signify_sign_delete = '◢'
 let g:signify_sign_show_count = 0
 
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_waap)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 au FileType elixir let b:AutoPairs = AutoPairsDefine({'do': 'end//n'})
@@ -31,6 +31,8 @@ let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb,*.md'
 " JavaScript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_domhtmlcss = 1
+
+let g:rainbow_active = 1
 
 " lang server
 inoremap <silent><expr> <TAB>
@@ -90,7 +92,7 @@ let g:nord_italic_comments = 1
 let g:nord_italic = 1
 let g:nord_cursor_line_number_background = 1
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [
       \     [ 'mode', 'paste' ],
