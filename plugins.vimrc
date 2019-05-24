@@ -21,7 +21,7 @@ let g:signify_sign_change = '┃'
 let g:signify_sign_delete = '◢'
 let g:signify_sign_show_count = 0
 
-nmap <silent> <C-j> <Plug>(ale_next_waap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 au FileType elixir let b:AutoPairs = AutoPairsDefine({'do': 'end//n'})
@@ -68,9 +68,22 @@ nmap <leader>lr <Plug>(coc-rename)
 
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" nnoremap <silent> <space>o  :<C-u>CocList -I -A outline<cr>
 
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" nnoremap <silent> <space>s  :<C-u>CocList -I -A symbols<cr>
+
+nmap <leader>o :Vista!!<CR>
+nmap <leader>s :Vista finder<CR>
+
+let g:vista_default_executive = 'coc'
+
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 "Ctrl-P stuff
 let g:ctrlp_match_window='bottom,order:ttb'
@@ -91,19 +104,37 @@ let g:nord_underline = 1
 let g:nord_italic_comments = 1
 let g:nord_italic = 1
 let g:nord_cursor_line_number_background = 1
+" let g:lightline = {
+"       \ 'colorscheme': 'one',
+"       \ 'active': {
+"       \   'left': [
+"       \     [ 'mode', 'paste' ],
+"       \     [ 'readonly', 'fugitive', 'filename', 'method' ]
+"       \   ]
+"       \ },
+"       \ 'component_function': {
+"       \   'fugitive': 'LightlineFugitive',
+"       \   'readonly': 'LightlineReadonly',
+"       \   'modified': 'LightlineModified',
+"       \   'filename': 'LightlineFilename',
+"       \   'method': 'NearestMethodOrFunction'
+"       \ }
+"     \ }
+
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'jay',
       \ 'active': {
       \   'left': [
       \     [ 'mode', 'paste' ],
-      \     [ 'fugitive', 'filename' ]
+      \     [ 'readonly', 'fugitive', 'filename', 'method' ]
       \   ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive',
       \   'readonly': 'LightlineReadonly',
       \   'modified': 'LightlineModified',
-      \   'filename': 'LightlineFilename'
+      \   'filename': 'LightlineFilename',
+      \   'method': 'NearestMethodOrFunction'
       \ },
       \ 'separator': {
       \   'left': '',
